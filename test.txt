@@ -1,0 +1,71 @@
+  // if(!this.items.toString().toLowerCase().includes(this.inputVal.trim().toLocaleLowerCase())){
+      //   this.items.push(this.inputVal)
+      //   this.inputVal = ''
+      // }
+
+
+
+      //////////////
+      
+<script>
+export default{
+   data(){
+    return{
+      inputVal:'',
+      items: [
+        {
+          id:0,
+          name:'cola',
+          price:50,
+          category:'drink',
+        },        
+        {
+          id:1,
+          name:'iphone',
+          price:50000,
+          category:'phone',
+        },        
+        {
+          id:2,
+          name:'lagman',
+          price:200,
+          category:'eat',
+        },        
+        {
+          id:3,
+          name:'sprite',
+          price:45,
+          category:'drink',
+        },        
+      ],
+      person:['alinur','seytek','bekjan']
+    }
+  },
+  methods:{
+    filterProduct(){
+      // if(this.person.filter(names => names.includes(this.inputVal))){
+      //   return this.inputVal
+      // }
+      if(this.person === this.inputVal){
+        return this.inputVal
+      }
+    }
+  }
+}
+</script>
+
+<template>
+  <div>
+    <input v-model='inputVal' type="text" placeholder="filter category">
+    <button @click="filterProduct">add product</button>
+  <ol>
+    <!-- <li v-for="item in items">name - {{ item.name }} | price - {{ item.price }} | category - {{ item.category }}</li> -->
+    <li v-for="item in person">{{ item }}</li>
+  </ol>
+  </div>
+</template>
+
+
+<style>
+
+</style>
